@@ -1,8 +1,6 @@
 #include "Entity.h"
 #include "Game.h"
 
-Game* m_Game;
-
 Entity::Entity(const char* filepath, int width, int height, Game* game)
 	: m_Width(width), m_Height(height)
 {

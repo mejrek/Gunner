@@ -1,5 +1,5 @@
 #pragma once
-//#include "Game.h"
+#include "Game.h"
 #include "SDL/include/SDL.h"
 #include <string>
 
@@ -10,6 +10,7 @@ private:
 public:
 	SDL_Texture* m_Texture;
 	SDL_Surface* m_Surface;
+	Game* m_Game;
 	Entity(const char* filepath, int width, int height, Game* game);
 	~Entity();
 
