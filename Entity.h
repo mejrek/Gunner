@@ -1,26 +1,28 @@
 #pragma once
-#include "Game.h"
 #include "SDL/include/SDL.h"
-#include <string>
+#include <iostream>
 
-class Entity {
+class Entity
+{
 private:
-	int posX, posY;
+	int posX = 400;
+	int	posY = 320;
+	int sx = 0;
+	int sy = 0;
 	int m_Width, m_Height;
+	int speed = 1;
 public:
-	SDL_Texture* m_Texture;
+	SDL_Rect m_Rect;
 	SDL_Surface* m_Surface;
-	Game* m_Game;
-	Entity(const char* filepath, int width, int height, Game* game);
+	SDL_Texture* m_Texture;
+	Entity(const char* filepath, int width, int height);
 	~Entity();
 
-	void RenderEntity(Game* game);
+	void MoveUp();
+	void MoveDown();
+	void MoveLeft();
+	void MoveRight();
+
+	void Update();
 };
 
-class Player: Entity{
-private:
-	int m_Width, m_Height;
-public:
-
-	void RenderPlayer(Game* game);
-};

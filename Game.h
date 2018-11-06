@@ -8,15 +8,20 @@ private:
 	int m_Width = 800;
 	int m_Height = 600;
 	bool isClosed = false;
-	SDL_Event event;
+	int targetFPS = 60;
+	int LoopDelay = 1000 / targetFPS;
+	SDL_Event m_Event;
 	SDL_KeyboardEvent keyEvent;
 public:
 	SDL_Renderer* m_Renderer;
-	Player m_Player;
-	 Game();
+	Entity* m_Player;
+	SDL_Texture* m_Texture;
+	 Game(Entity* entity);
 	~Game();
 
 	void Render();
 	void GameLoop();
 	void HandleInput();
+
+	void DrawEntity(Entity* entity);
 };
